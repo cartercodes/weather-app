@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "A Simple weather app",
   "main": "index.js",
-  "homepage": "https://cartercodes.github.io/weather-app",
   "scripts": {
     "start": "webpack-dev-server --colors --mode=development",
     "build": "webpack --mode=production",
-    "deploy": "gh-pages -d src",
     "heroku-postbuild": "echo Skip build on Heroku"
   },
   "keywords": [
