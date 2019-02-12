@@ -3,7 +3,7 @@
 }
 
 form{
-  border-bottom: 1px solid #fe1743;
+  border-bottom: 1px solid #d04ed6;
 }
 
 input[type="text"]{
@@ -17,10 +17,10 @@ input[type="text"]{
 
 .search-button{
     padding:8px;
-    background-color: #fe1743;
+    background-color: #d04ed6;
     color: white;
     cursor: pointer;
-    border-bottom: 1px solid #fe1743;
+    border-bottom: 1px solid #d04ed6;
 }
 
 ::-webkit-input-placeholder {

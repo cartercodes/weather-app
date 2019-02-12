@@ -13,7 +13,7 @@ class GraphComponent extends Component {
                 </div>
                 <div className="graph">
                     <Sparklines data={this.props.data}>
-                        <SparklinesLine color="#fe1743" />
+                        <SparklinesLine color="#d04ed6" />
                         <SparklinesSpots style={{ fill: "#ffffff" }} />
                     </Sparklines>
                 </div>

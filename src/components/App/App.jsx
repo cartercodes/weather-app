@@ -32,7 +32,7 @@ class App extends Component {
                 console.log('Permission Denied');
             });
         } else {
-            console.log('GeoLocation not supported...Update the browser fella');
+            console.log('GeoLocation not supported...Update the browser');
         }
     }
 
