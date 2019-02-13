@@ -3,6 +3,8 @@ import Navbar from '../Navbar';
 import TodayComponent from '../TodayComponent';
 import ListComponent from '../ListComponent';
 import GraphComponent from '../GraphComponent';
+import CommentBox from '../CommentBox';
+import Comments from '../Comments';
 import axios from 'axios';
 
 import './App.css';
@@ -10,6 +12,7 @@ import './App.css';
 class App extends Component {
     constructor(props) {
         super(props);
+        this.handleAddComment = this.handleAddComment.bind(this);
         this.state = {
             unit: 'C',
             queryString: '',
@@ -17,7 +20,8 @@ class App extends Component {
             navbarData: {}, //this
             todayComponentData: {},
             listComponentData: [],
-            graphComponentData: []
+            graphComponentData: [],
+            comments: []
         };
     }
 
@@ -156,6 +160,29 @@ class App extends Component {
         }
     }
 
+    componentDidMount() {
+        /*global Ably*/
+        const channel = Ably.channels.get('comments');
+       
+        channel.attach();
+          channel.once('attached', () => {
+            channel.history((err, page) => {
+              // create a new array with comments only in an reversed order (i.e old to new)
+              const comments = Array.from(page.items.reverse(), item => item.data)
+       
+              this.setState({ comments });
+            });
+        });
+    }
+
+    handleAddComment(comment) {
+        this.setState(prevState => {
+          return {
+            comments: prevState.comments.concat(comment)
+          };
+        });
+    }
+
     // Takes date object or unix timestamp in ms and returns day string
     getDay = (time) => {
         const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday ", "Friday", "Saturday"];
@@ -178,6 +205,10 @@ class App extends Component {
             <div className="app-list-graph">
                 <ListComponent data={this.state.listComponentData} />
                 <GraphComponent data={this.state.graphComponentData} />
+            </div>
+            <div className="app-list-comments">
+              <CommentBox handleAddComment={this.handleAddComment} />
+              <Comments comments={this.state.comments.reverse()} />
             </div>
         </React.Fragment>
 

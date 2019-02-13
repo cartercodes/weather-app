@@ -2,7 +2,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    background: #4B79A1;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom right, #283E51, #4B79A1);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom right, #283E51, #4B79A1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* height: 100vh; */
 }
 
 .app-today{
@@ -14,6 +17,12 @@
     flex-direction: row;
     margin: 20px 0px;
 }
+
+/* .app-list-comments {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 2;
+} */
 
 .app-list-graph > div{
     flex-basis: 50%;
@@ -28,6 +37,7 @@
     margin: auto;
     text-align: center;
     color: white;
+    height: 100vh;
 }
 
 @media all and (max-width:768px){

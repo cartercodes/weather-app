@@ -3,11 +3,13 @@
     flex-direction: column;
     justify-content: flex-end;
     color: white;
+    border-bottom: 4px solid #d04ed6;
+    margin-bottom: 4px;
 }
 
 .graph{
     padding: 0px 4px;
-    margin-top: 4px;
+    margin-top: 1Spx;
 }
 
 .graph-info{
