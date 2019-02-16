@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+// Components 
 import Navbar from '../Navbar';
 import TodayComponent from '../TodayComponent';
 import ListComponent from '../ListComponent';

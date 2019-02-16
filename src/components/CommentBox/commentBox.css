@@ -1,8 +1,8 @@
 .comment-box-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: flex-start; */
     flex-shrink: 2;
 } 
 

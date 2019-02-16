@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './commentBox.css';
  
 class CommentBox extends Component {
@@ -40,7 +41,7 @@ class CommentBox extends Component {
   render() {
     return (
       <div className="comment-box-container">
-        <h4 className="title">Kindly leave your thoughts to the right</h4>
+        <h4 className='title'>Please leave comments</h4>
         <form onSubmit={this.addComment}>
           <div className="field">
             <div className="control-1">

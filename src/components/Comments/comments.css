@@ -1,0 +1,10 @@
+.section {
+    display: flex;
+    /* align-items: flex-start; */
+    flex-direction: row;
+    padding: 10px 5px 0px 5px;
+}
+
+.media-left {
+    margin: 0 1rem 0 1rem;
+}
